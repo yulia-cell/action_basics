@@ -26,7 +26,7 @@ jobs:
   my_deploy: 
     runs-on: ubuntu-latest
     steps:
-      - name: Print message hi on deploy
+    - name: Print message hi on deploy
         run:
           echo "hi from deploy!" 
        - name: printing deployment packege
