@@ -7,7 +7,7 @@ on:
       - main 
 
 jobs:
-  my testing:
+  my_testing:
     runs-on: ubuntu-letest
     steps:
       - name: Print message hi on testing
