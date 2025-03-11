@@ -1,6 +1,9 @@
 #---------------------------------------------
 #
 name: my_actions_basics
+env:
+  APP_NAME      : 'My flask'
+  DEP_PAC_NAME  : 'flask_deploy_var ${{ github.sha }}'
 on: 
   push:
     branches:
@@ -12,12 +15,20 @@ jobs:
     needs: [my_deploy]
     steps:
       - name: Print message hi on testing
-        run:
+        run: |
           echo "hi from testing!"
-
+      - name: Execure few commands
+        run: |
+          echo 'Hello message 1'
+          echo 'Hello message 2'
+          echo 'application name : ${{ env.APP_NAME }}'
+      
   my_deploy: 
     runs-on: ubuntu-latest
     steps:
       - name: Print message hi on deploy
         run:
-          echo "hi from deploy!"    
+          echo "hi from deploy!" 
+       - name: printing deployment packege
+         run: |
+           echo " Deploy package is : ${{ env.DEP_PAC_NAME }}"
