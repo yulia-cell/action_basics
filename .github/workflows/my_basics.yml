@@ -27,8 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Print message hi on deploy
-        run:
-          echo "hi from deploy!" 
-       - name: printing deployment packege
-         run: |
+      run:
+          echo "hi from deploy!"
+    - name: printing deployment packege
+      run: |
            echo " Deploy package is : ${{ env.DEP_PAC_NAME }}"
